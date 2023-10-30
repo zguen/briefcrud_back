@@ -9,6 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Utilisateur } from './utilisateurs/entities/utilisateur.entity';
 import { Produit } from './produits/entities/produit.entity';
 import { Category } from './categories/entities/category.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { Category } from './categories/entities/category.entity';
       entities: [Utilisateur, Produit, Category],
       synchronize: false,
     }),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
