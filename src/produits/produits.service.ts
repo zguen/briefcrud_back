@@ -9,7 +9,7 @@ import { Repository } from 'typeorm';
 export class ProduitsService {
   constructor(
     @InjectRepository(Produit) private produitRepository: Repository<Produit>,
-  ) {}
+  ) { }
 
   async create(createProduitDto: CreateProduitDto) {
     const produit = this.produitRepository.create(createProduitDto);
