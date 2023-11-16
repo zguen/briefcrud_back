@@ -11,6 +11,7 @@ export class ProduitsService {
     @InjectRepository(Produit) private produitRepository: Repository<Produit>,
   ) {}
 
+  
   async create(createProduitDto: CreateProduitDto) {
     try {
       const produit = this.produitRepository.create(createProduitDto);
@@ -22,6 +23,10 @@ export class ProduitsService {
         'Une erreur est survenue lors de la création du produit.',
       );
     }
+  }
+
+  async findAll() {
+    return this.produitRepository.find();
   }
 
   async findOne(id: number) {
